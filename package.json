@@ -1,5 +1,5 @@
 {
-  "name": "plus-inmobiliaria",
+  "name": "nico-automotores",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "import:legacy": "tsx scripts/import-legacy-html.ts",
-    "import:legacy:dry": "tsx scripts/import-legacy-html.ts --dry-run"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
