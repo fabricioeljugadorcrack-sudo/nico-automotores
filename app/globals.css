@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 246 248 252;        /* Gris azulado claro #f6f8fc */
+    --fg: 14 17 22;           /* #0e1116 */
+    --muted: 58 65 80;        /* #3a4150 */
+    --line: 219 226 238;
+    --surface: 255 255 255;
+    --brand: 22 54 204;       /* Azul NICO #1636cc */
+  }
+
+  [data-theme='dark'] {
+    --bg: 11 15 25;
+    --fg: 236 241 250;
+    --muted: 160 170 190;
+    --line: 36 44 64;
+    --surface: 18 24 38;
+    --brand: 90 145 255;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
+    -webkit-font-smoothing: antialiased;
+    /* Room for the fixed mobile action bar. */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  ::selection {
+    background: rgb(var(--brand));
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-plus {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply flex items-center gap-3 text-fluid-sm text-primary-700 dark:text-primary-300;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply block h-px w-8 bg-primary-700 dark:bg-primary-300;
+  }
+}
